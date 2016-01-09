@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo</title>
+    <title>Deep House Gen</title>
     <script defer type="application/dart" src="main.dart"></script>
     <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css" integrity="sha384-XXXXXXXX" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
@@ -20,18 +20,30 @@
     </nav>
 
     <div class="container">
-      <div class="row name-input">
-        <fieldset class="form-group">
-          <input type="password" class="form-control" id="artist-input" placeholder="Enter your artist name">
-        </fieldset>
+      <div class="row input-view">
+        <div class="col-lg-8 col-lg-offset-2">
+          <div  class="input-group">
+            <input type="text" class="form-control" placeholder="Enter Artist Name..." id="artist-input">
+            <span class="input-group-btn">
+              <button id="generate-album-btn" class="btn btn-primary" type="button">Go!</button>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="row render-view">
+        <div class="col-lg-6">
+        derp
+        </div>
+        <div class="col-lg-6">
+          <div class="album">
+            <div class="reflection"></div>
+            <div class="artist-name style-two">TITLE</div>
+            <div class="album-name style-two">ALBUM</div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="album">
-    <div class="reflection"></div>
-    <div class="artist-name style-two">TITLE</div>
-    <div class="album-name style-two">ALBUM</div>
-    </div>
     
 
     <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js" integrity="sha384-XXXXXXXX" crossorigin="anonymous"></script>

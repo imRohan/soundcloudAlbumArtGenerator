@@ -2,6 +2,11 @@
 
 body {
   background: white;
+  width: 100%;
+}
+
+.debug{
+  background-color: red;
 }
 
 .nav{
@@ -21,17 +26,28 @@ body {
   text-transform: uppercase;
 }
 
-.name-input{
+.input-view{
   margin-top: 40%;
 }
 
+.visible{
+  display:block !important;
+}
+
+.hidden{
+  display: none !important;
+}
+.render-view{
+  display: none;
+  margin-top: 20%;
+}
 /*Album Classes*/
 .album{
   width: 30rem;
   height: 30rem;
   background: url('https://source.unsplash.com/category/nature/900x900');
   background-size: cover;
-  position: relative;
+  border-right: 3px solid #999999;
   background-color: rgb(97, 56, 56);
   background-blend-mode: screen;
   border-radius: 2px;

@@ -1,23 +1,33 @@
 import 'dart:html';
+import 'dart:core';
 import 'dart:math' show Random;
 
-ButtonElement genButton;
+ButtonElement generateButton;
+Element inputText;
+Element albumArt;
+Element inputView;
 
 void main() {
-  querySelector('#artist-input').onInput.listen(updateAlbum);
+	generateButton = querySelector("#generate-album-btn");
+  generateButton.onClick.listen(updateAlbum);
 }
 
 void updateAlbum(Event e) {
-  String inputName = (e.target as InputElement).value;
+	inputText = querySelector("#artist-input");
+	inputView = querySelector(".input-view");
+	albumArt = querySelector(".render-view");
+  String inputName = inputText.value;
   setArtistName(inputName);
   generateAlbumName();
+  inputView.classes.toggle('hidden');
+  albumArt.classes.toggle('visible');
 }
 
 void setArtistName(String newName) {
   querySelector('.artist-name').text = newName;
 }
 
-generateAlbumName() {
+void generateAlbumName() {
 	var randomIndex = new Random();
 	List albumNames =  ['one', 'two'];
 	String _albumName;
