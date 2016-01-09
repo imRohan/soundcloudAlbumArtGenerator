@@ -38,11 +38,21 @@ body {
   border-color:  rgba(255,255,255,0.05) transparent transparent transparent;
 }
 
-.artist-name.style-one{
+.style-one{
   color: white;
-  position: absolute; 
-  top: 0;
-  left: 10px;
   font-family: 'Questrial', sans-serif;
   font-size: 1.4em;
+  text-transform: uppercase;
+}
+
+.artist-name.style-one{
+  position: absolute;    
+  top: 0;
+  left: 10px;  
+}
+
+.album-name.style-one{
+  position: absolute;
+  top: 0;
+  right: 10px;
 }
