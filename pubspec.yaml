@@ -1,0 +1,9 @@
+name: Deep House Album Generator
+author: Rohan Likhite
+description: A silly web app that creates a random album title /  art
+dependencies:
+  browser: ^0.10.0
+
+homepage: 
+gist: 
+
