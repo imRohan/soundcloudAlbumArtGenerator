@@ -1,7 +1,7 @@
-@import url(https://fonts.googleapis.com/css?family=Questrial|Patua+One|Source+Code+Pro);
+@import url(https://fonts.googleapis.com/css?family=Questrial|Patua+One|Source+Code+Pro:400,600,700|Montserrat|Raleway:400,100,800);
 
 body {
-  background: black;
+  background: white;
 }
 
 .nav{
@@ -10,11 +10,15 @@ body {
 }
 
 .bg-faded{
-  background-color: rgba(255,255,255,0.1) !important;
+  background-color: rgba(0,0,0,0.3) !important;
 }
 
 .navbar-light{
-  color: white !important;
+  color: WHITE !important;
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 1.5em;
+  text-transform: uppercase;
 }
 
 .name-input{
@@ -27,7 +31,12 @@ body {
   height: 30rem;
   background: url('https://source.unsplash.com/category/nature/900x900');
   background-size: cover;
-  position: relative
+  position: relative;
+  background-color: rgb(97, 56, 56);
+  background-blend-mode: screen;
+  border-radius: 2px;
+  transform: perspective(200px) rotateY(-4deg);
+  -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(60%, transparent) , to(rgba(250, 250, 250, 0.5)));
 }
 
 .album .reflection{
@@ -35,24 +44,68 @@ body {
   height: 0;
   border-style: solid;
   border-width: 30rem 30rem 0 0 ;
-  border-color:  rgba(255,255,255,0.05) transparent transparent transparent;
+  border-color:  rgba(255,255,255,0.1) transparent transparent transparent;
 }
 
 .style-one{
   color: white;
-  font-family: 'Questrial', sans-serif;
-  font-size: 1.4em;
+  font-family: 'Montserrat';
+  font-weight: 400;
+  font-size: 1.5em;
   text-transform: uppercase;
 }
 
 .artist-name.style-one{
   position: absolute;    
-  top: 0;
-  left: 10px;  
+  top: 10px;
+  left: 15px;  
 }
 
 .album-name.style-one{
   position: absolute;
-  top: 0;
-  right: 10px;
+  top: 10px;
+  right: 15px;
+}
+
+.style-two{
+  color: white;
+  font-family: 'Raleway';
+  font-weight: 300;
+}
+
+.artist-name.style-two{
+  font-size: 1.5em;
+  position: absolute;    
+  top: 56%;
+  left: 20px;
+}
+
+.album-name.style-two{  
+  font-size: 4em;
+  position: absolute;    
+  top: 40%;
+  left: 20px;
+  text-transform: uppercase;
+}
+
+.style-three{
+  color: white;
+  font-family: 'Montserrat';
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
+}
+
+.artist-name.style-three{
+  font-size: 1em;
+  position: absolute;    
+  top: 52%;
+
+}
+
+.album-name.style-three{  
+  font-size: 4em;
+  position: absolute;    
+  top: 35%;
+  text-transform: uppercase;
 }
