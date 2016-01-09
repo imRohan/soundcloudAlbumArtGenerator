@@ -26,8 +26,15 @@ body {
   text-transform: uppercase;
 }
 
+.main-header{
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: 5em;
+  line-height: 1em;
+}
+
 .input-view{
-  margin-top: 40%;
+  margin-top: 30%;
 }
 
 .visible{
@@ -41,11 +48,18 @@ body {
   display: none;
   margin-top: 20%;
 }
+
+.spacer-top{
+  margin-top: 3%;
+}
+.orange{
+  color: #FF4500;
+}
 /*Album Classes*/
 .album{
   width: 30rem;
   height: 30rem;
-  background: url('https://source.unsplash.com/category/nature/900x900');
+  background: url('https://source.unsplash.com/category/nature/700x700');
   background-size: cover;
   border-right: 3px solid #999999;
   background-color: rgb(97, 56, 56);
@@ -92,14 +106,14 @@ body {
 .artist-name.style-two{
   font-size: 1.5em;
   position: absolute;    
-  top: 56%;
+  top: 52%;
   left: 20px;
 }
 
 .album-name.style-two{  
   font-size: 4em;
   position: absolute;    
-  top: 40%;
+  top: 36%;
   left: 20px;
   text-transform: uppercase;
 }

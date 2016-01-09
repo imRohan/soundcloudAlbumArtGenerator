@@ -14,28 +14,28 @@ void main() {
 	generateButton = querySelector('#generate-album-btn');
   generateButton.onClick.listen(updateAlbum);
   querySelector('#album-style').onInput.listen(changeStyle);
+  querySelector('#artist-change').onInput.listen(changeName);
+  querySelector('#album-change').onInput.listen(changeTitle);
+  querySelector('#random-album').onClick.listen(test);
 }
 
 void updateAlbum(Event e) {
-	inputText = querySelector('#artist-input');
 	inputView = querySelector('.input-view');
 	albumArt = querySelector('.render-view');
-  String inputName = inputText.value;
-  setArtistName(inputName);
-  generateAlbumName();
-  inputView.classes.toggle('hidden');
-  albumArt.classes.toggle('visible');
+	generateAlbumInfo();
+	inputView.classes.toggle('hidden');
+	albumArt.classes.toggle('visible');
 }
 
-void setArtistName(String newName) {
-  querySelector('.artist-name').text = newName;
-}
-
-void generateAlbumName() {
+void generateAlbumInfo() {
 	var randomIndex = new Random();
-	List albumNames =  ['one', 'two'];
+	List artistNames =  ['Bounce', 'Fade', 'Near', 'Us', 'Believe', 'Live', 'Sway'];
+	List albumNames =  ['Bounce', 'Fade', 'Near', 'Us', 'Believe', 'Live', 'Sway'];
+	String _artistName;
 	String _albumName;
+	_artistName = artistNames[randomIndex.nextInt(artistNames.length)];
 	_albumName = albumNames[randomIndex.nextInt(albumNames.length)];
+	querySelector('.artist-name').text = _artistName;
 	querySelector('.album-name').text = _albumName;	
 }
 
@@ -44,13 +44,24 @@ void changeStyle(Event e){
 	setAlbumTitleStyle = querySelector('.album-name');
 	setAlbumArtistStyle = querySelector('.artist-name');
 	String currentStyle = setAlbumTitleStyle.dataset['style'];
-
-
-	setAlbumTitleStyle.classes.remove(currentStyle);
-	setAlbumArtistStyle.classes.remove(currentStyle);
-	setAlbumTitleStyle.classes.add(albumStyle);
-	setAlbumArtistStyle.classes.add(albumStyle);
-	setAlbumTitleStyle.dataset['style'] = albumStyle;
-	setAlbumArtistStyle.dataset['style'] = albumStyle;
+	swapStyles(setAlbumTitleStyle, currentStyle, albumStyle);
+	swapStyles(setAlbumArtistStyle, currentStyle, albumStyle);
 }
 
+void swapStyles(element, currentStyle, newStyle){
+	element.classes.remove(currentStyle);
+	element.classes.add(newStyle);
+	element.dataset['style'] = newStyle;
+}
+
+void changeName(Event e){
+	querySelector('.artist-name').text = e.target.value;
+}
+
+void changeTitle(Event e){
+	querySelector('.album-name').text = e.target.value;
+}
+
+void test(Event e){
+	generateAlbumInfo();
+}
