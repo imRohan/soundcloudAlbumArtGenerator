@@ -3,25 +3,36 @@ import 'dart:core';
 import 'dart:math' show Random;
 
 ButtonElement generateButton;
-Element inputText;
+Element album;
 Element albumArt;
 Element inputView;
-Element albumStyle;
 Element setAlbumTitleStyle;
 Element setAlbumArtistStyle;
+
+CanvasElement canvas = document.querySelector('#application-wrapper');
 
 void main() {
 	generateButton = querySelector('#generate-album-btn');
   generateButton.onClick.listen(updateAlbum);
+
+  album = querySelector('.album');
+  albumArt = querySelector('.render-view');
+  inputView = querySelector('.input-view');
+
+  setAlbumTitleStyle = querySelector('.album-name');
+	setAlbumArtistStyle = querySelector('.artist-name');
+
   querySelector('#album-style').onInput.listen(changeStyle);
   querySelector('#artist-change').onInput.listen(changeName);
   querySelector('#album-change').onInput.listen(changeTitle);
-  querySelector('#random-album').onClick.listen(test);
+  querySelector('#random-album').onClick.listen(randomizeText);
+  querySelector('#save-album').onClick.listen(saveAlbum);
+
+
+  mouseMove();
 }
 
 void updateAlbum(Event e) {
-	inputView = querySelector('.input-view');
-	albumArt = querySelector('.render-view');
 	generateAlbumInfo();
 	inputView.classes.toggle('hidden');
 	albumArt.classes.toggle('visible');
@@ -29,7 +40,7 @@ void updateAlbum(Event e) {
 
 void generateAlbumInfo() {
 	var randomIndex = new Random();
-	List artistNames =  ['Bounce', 'Fade', 'Near', 'Us', 'Believe', 'Live', 'Sway'];
+	List artistNames =  ['ToFlo', 'Pharma-C', 'Jo-E', 'Fader', 'Zhu', 'Flume', 'Dj Sabo', 'Steve Void', 'Fonky-Town', 'Nu-Mark', 'Flamingosis', 'Da Future', 'Rufus', 'Coyote Kisses', 'Joe Burns'];
 	List albumNames =  ['Bounce', 'Fade', 'Near', 'Us', 'Believe', 'Live', 'Sway'];
 	String _artistName;
 	String _albumName;
@@ -40,12 +51,10 @@ void generateAlbumInfo() {
 }
 
 void changeStyle(Event e){
-	String albumStyle = 'style-' + querySelector('#album-style').value;
-	setAlbumTitleStyle = querySelector('.album-name');
-	setAlbumArtistStyle = querySelector('.artist-name');
-	String currentStyle = setAlbumTitleStyle.dataset['style'];
-	swapStyles(setAlbumTitleStyle, currentStyle, albumStyle);
-	swapStyles(setAlbumArtistStyle, currentStyle, albumStyle);
+	String _albumStyle = 'style-' + querySelector('#album-style').value;
+	String _currentStyle = setAlbumTitleStyle.dataset['style'];
+	swapStyles(setAlbumTitleStyle, _currentStyle, _albumStyle);
+	swapStyles(setAlbumArtistStyle, _currentStyle, _albumStyle);
 }
 
 void swapStyles(element, currentStyle, newStyle){
@@ -62,6 +71,14 @@ void changeTitle(Event e){
 	querySelector('.album-name').text = e.target.value;
 }
 
-void test(Event e){
+void randomizeText(Event e){
 	generateAlbumInfo();
+}
+
+void mouseMove(){
+	// canvas.onMouseMove.listen((e) {
+	//   Int newY = e.client.y %10;
+	//   print(newY);
+	//   album.style.transform = "perspective(200px) rotateY(-$newY deg)";
+	// });
 }

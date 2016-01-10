@@ -55,13 +55,20 @@ body {
 .orange{
   color: #FF4500;
 }
+
+label, button {
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: 1.1em;
+}
 /*Album Classes*/
 .album{
-  width: 30rem;
-  height: 30rem;
-  background: url('https://source.unsplash.com/category/nature/700x700');
+  width: 25rem;
+  height: 25rem;
+  background: url('https://source.unsplash.com/category/nature/500x500');
   background-size: cover;
-  border-right: 3px solid #999999;
+  border-right: 6px solid #E57349;
+  border-top-right-radius: 4px;
   background-color: rgb(97, 56, 56);
   background-blend-mode: screen;
   border-radius: 2px;
@@ -73,7 +80,7 @@ body {
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 30rem 30rem 0 0 ;
+  border-width: 25rem 25rem 0 0 ;
   border-color:  rgba(255,255,255,0.1) transparent transparent transparent;
 }
 
@@ -106,7 +113,7 @@ body {
 .artist-name.style-two{
   font-size: 1.5em;
   position: absolute;    
-  top: 52%;
+  top: 54%;
   left: 20px;
 }
 
@@ -129,7 +136,7 @@ body {
 .artist-name.style-three{
   font-size: 1em;
   position: absolute;    
-  top: 52%;
+  top: 54%;
 
 }
 
@@ -138,4 +145,71 @@ body {
   position: absolute;    
   top: 35%;
   text-transform: uppercase;
+}
+
+.style-four{
+  color: white;
+  font-family: 'Raleway'; 
+  font-weight: 300;
+  text-align: center;
+  width: 100%;
+}
+
+.artist-name.style-four{
+  font-family: 'Questrial'; 
+  font-size: 4em;
+  font-weight: 700;
+  position: absolute;    
+  top: 1%;
+  line-height: 1.2em;
+}
+
+.album-name.style-four{ 
+  letter-spacing: 1em;
+  font-size: 0.9em;
+  position: absolute;    
+  top: 17%;
+  text-transform: uppercase;
+  text-shadow: 0px 0px 14px rgba(0, 0, 0, 1)
+}
+
+.style-five{
+  color: white;
+  text-align: center;
+  width: 100%;
+  text-shadow: 0px 0px 14px rgba(0, 0, 0, 0.1)
+}
+
+.artist-name.style-five{
+  font-family: 'Montserrat';
+  font-size: 4em;
+  line-height: 1.2em;
+  font-weight: 700;
+  position: absolute;
+  font-style: italic;
+  text-align: right;
+  right: 3%;    
+  top: 60%;
+}
+
+.album-name.style-five{ 
+  font-family: 'Source Code Pro', ;
+  font-size: 0.9em;
+  font-weight: 300;
+  position: absolute;    
+  top: 76%;
+  text-align: right;
+  right: 3%;   
+  text-transform: uppercase;
+}
+
+.topLogo{
+  font-family: 'Montserrat';
+  font-size: 1.4em;
+  font-weight: 700;
+  left: 3%;
+  line-height: 1em;
+  position: absolute;
+  top: 2%;
+  width: 20%;
 }

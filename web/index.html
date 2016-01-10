@@ -4,18 +4,18 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deep House Gen</title>
+    <title>Album Art Generator</title>
     <script defer type="application/dart" src="main.dart"></script>
     <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css" integrity="sha384-XXXXXXXX" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
   </head>
 
-  <body>
+  <body id="application-wrapper">
     <div class="container">
       <div class="row input-view">
         <div class="col-lg-10 col-lg-offset-1">
         <div class="main-header">
-          <span class="orange">Soundcloud</span> Album Art Generator*
+          <span class="orange">Soundcloud</span> Album Art Generator
         </div>
         </div>
         <div class="col-lg-10 col-lg-offset-1 spacer-top">
@@ -23,12 +23,13 @@
         </div>
       </div>
       <div class="row render-view">
+      <div class='topLogo'><span class="orange">Soundcloud</span> Album Art Generator</div>
         <div class="col-lg-6">
           <label for="artist-change">Album Information</label>
             <div class="row">              
               <div class="col-lg-8">              
                 <input type="text" class="form-control" placeholder="Artist Name" id="artist-change">
-              </div>
+              </div> <br/>
             </div>
             <div class="row">
               <div class="col-lg-8">
@@ -44,6 +45,7 @@
                     <option>two</option>
                     <option>three</option>
                     <option>four</option>
+                    <option>five</option>
                   </select>
                 </fieldset>
               </div>
@@ -51,6 +53,11 @@
             <div class="row spacer-top">
               <div class="col-lg-8">
                 <button id="random-album" class="btn btn-primary btn-block" type="button">Randomize</button>
+              </div>
+            </div>
+            <div class="row spacer-top">
+              <div class="col-lg-8">
+                <button id="save-album" class="btn btn-primary btn-block" type="button">Save</button>
               </div>
             </div>
         </div>
